@@ -1,0 +1,157 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+/* HEADER */
+.header {
+    color:rgb(136, 56, 145);
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    text-align: center;
+    padding-top: 50px;
+    font-size: 3em;
+}
+
+.app {
+    color: rgb(62, 179, 91);
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+
+/* ADDING */
+.container-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.adding-container {
+    height: 150px;
+    width: 600px;
+    text-align: center;
+}
+
+.adding-title {
+    display: flex;
+    justify-content: center;
+}
+
+.adding-input {
+    box-sizing: border-box;
+    height: 30px;
+    padding-left: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+
+}
+
+.adding-input::placeholder {
+    color: rgb(0, 0, 0, 0.75);
+    font-size: 95%;
+}
+
+.adding-input:focus {
+    outline: none;
+    caret-color: rgb(0, 0, 0);
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+.adding-button {
+    height: 30px;
+    width: 30px;
+    background-color: rgba(125, 231, 148, 0.5);
+    border: 0.5px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    color: white;
+    position:relative;
+    font-size: 1.3em;
+    top: 2.5px;
+  
+}
+
+.adding-button:hover {
+    cursor: pointer;
+    background-color: rgba(125, 231, 148, 0.9);
+    border-color: rgb(59, 223, 95);
+}
+
+/* LIST */
+
+.container-wrapper2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding: 0;
+}
+li {
+    font-size: 1.2em;
+    padding: 2px 0;
+}
+
+.clearing-button {
+    height: 25px;
+    background-color: rgba(205, 49, 49, 0.5);
+    border: 0.5px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.clearing-button:hover {
+    cursor: pointer;
+    background-color: rgba(205, 49, 49, 0.8);
+    border-color: red;
+}
+
+.done {
+    text-decoration-line: line-through;
+    text-decoration-color: rgb(0, 0, 0);
+    text-decoration-thickness: 2px;
+}
+
+.delete-button {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 5px;
+    height: 20px;
+    color: rgb(255, 0, 0, 0.5);
+    position: relative;
+    background:none;
+    border:none;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    color: rgb(255, 0, 0, 0.8);
+}
+
+.check-button {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 5px;
+    height: 20px;
+    color: rgb(0, 177, 15, 0.5);
+    position: relative;
+    background:none;
+    border:none;
+}
+
+.check-button:hover {
+    cursor: pointer;
+    color: rgb(0, 177, 15, 0.8);
+}
