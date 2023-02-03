@@ -10,11 +10,17 @@ function addItemToList(event) {
     var li = document.createElement('li');
     var cross = document.createElement('button');
     var check = document.createElement('button');
-    // Add the text and the class for cross/check buttons.
-    check.appendChild(document.createTextNode('✔'));
-    cross.appendChild(document.createTextNode('x'));
+    var checkIMG = document.createElement('img');
+    checkIMG.src = 'check.png';
+    var crossIMG = document.createElement('img');
+    crossIMG.src = 'cross.png';
+    // Add the cross/check img.
     check.classList.add('check-button')
     cross.classList.add('delete-button')
+    checkIMG.classList.add('buttons')
+    crossIMG.classList.add('buttons')
+    check.appendChild(checkIMG);
+    cross.appendChild(crossIMG);
     // Add the text for <li>, taken from input.
     li.appendChild(document.createTextNode(userInput.value));
     // Add the buttons to the <li>.
