@@ -27,10 +27,12 @@ function addItemToList(event) {
     quantity.classList.add('quantInput');
     quantity.setAttribute('value', 1);
     // Add the cross/check img.
-    check.classList.add('addon-buttons')
-    cross.classList.add('addon-buttons')
-    checkIMG.classList.add('buttons')
-    crossIMG.classList.add('buttons')
+    check.classList.add('addon-buttons');
+    check.classList.add('check-btn');
+    cross.classList.add('addon-buttons');
+    checkIMG.classList.add('buttons');
+    // crossIMG.classList.add('cross-img-btn');
+    crossIMG.classList.add('buttons');
     check.appendChild(checkIMG);
     cross.appendChild(crossIMG);
     // Add the text for <li>, taken from input.
