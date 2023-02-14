@@ -104,6 +104,7 @@ h2 {
 
 ul {
     padding: 0;
+    list-style-type: none;
 }
 li {
     font-size: 1.2em;
@@ -136,12 +137,14 @@ li {
     width: 20px;
     opacity: 0.6;
 }
-
+.buttons:hover {
+    cursor: pointer;
+}
 .buttons:hover {
     opacity: 1;
 }
 
-.delete-button {
+.addon-buttons {
     margin-left: 5px;
     height: 20px;
     width: 20px;
@@ -151,20 +154,48 @@ li {
     top: 2px;
 }
 
-.delete-button:hover {
-    cursor: pointer;
+.itemInput {
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    width: 150px;
 }
 
-.check-button {
-    margin-left: 5px;
-    height: 20px;
-    width: 20px;
-    position: relative;
-    background:none;
-    border:none;
-    top: 2px;
+.itemInput::placeholder {
+    color:black;
+    opacity: 1;
 }
 
-.check-button:hover {
-    cursor: pointer;
+
+.itemInput:active {
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.quantInput {
+    border: none;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    width: 30px;
+}
+
+.quantInput::placeholder {
+    color:black;
+    opacity: 1;
+}
+
+
+.quantInput:active {
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 509px) {
+    #list-h2 {
+        margin-top: 50px;
+    }
 }

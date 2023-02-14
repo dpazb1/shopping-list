@@ -8,26 +8,41 @@ var ul = document.getElementById('shoppinglist')
 function addItemToList(event) {
     // Creating the new li and the new check/cross buttons:
     var li = document.createElement('li');
+    var itemText = document.createElement('input');
+    var quantity = document.createElement('input');
     var cross = document.createElement('button');
     var check = document.createElement('button');
     var checkIMG = document.createElement('img');
     checkIMG.src = 'check.png';
     var crossIMG = document.createElement('img');
     crossIMG.src = 'cross.png';
+    // Customize itemText:
+    itemText.setAttribute('type', 'text');
+    itemText.setAttribute('value', userInput.value);
+    itemText.setAttribute('spellcheck', 'false')
+    itemText.classList.add('itemInput');
+    itemText.scrollLeft = itemText.scrollWidth;
+    // Customize quantity button:
+    quantity.setAttribute('type', 'number');
+    quantity.classList.add('quantInput');
+    quantity.setAttribute('value', 1);
     // Add the cross/check img.
-    check.classList.add('check-button')
-    cross.classList.add('delete-button')
+    check.classList.add('addon-buttons')
+    cross.classList.add('addon-buttons')
     checkIMG.classList.add('buttons')
     crossIMG.classList.add('buttons')
     check.appendChild(checkIMG);
     cross.appendChild(crossIMG);
     // Add the text for <li>, taken from input.
-    li.appendChild(document.createTextNode(userInput.value));
+    li.appendChild(itemText);
+    // Add quantity input:
+    li.appendChild(quantity);
+    // li.appendChild(document.createTextNode(userInput.value));
     // Add the buttons to the <li>.
     li.appendChild(cross);
     li.appendChild(check);
     // Add event for clicking the list item and toggling class "done".
-    check.addEventListener('click', ()=> li.classList.toggle('done'))
+    check.addEventListener('click', ()=> itemText.classList.toggle('done'))
     // Add event for clicking delete button, that makes its parent element(<li>) disappear.
     cross.addEventListener('click', ()=> cross.parentElement.remove())
     // Add <li> to the <ul>
