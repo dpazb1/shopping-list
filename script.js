@@ -79,5 +79,6 @@ userInput.addEventListener('keypress', function (event) {
 
 // Clear button
 clearButton.addEventListener('click', function () {
-    document.getElementById("shoppinglist").innerHTML='';
+    document.getElementById("shoppinglist").innerHTML='<li class="list-top">List:</li>
+    <hr class="custom-hr">';
 });
