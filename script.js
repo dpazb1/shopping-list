@@ -17,6 +17,7 @@ function addItemToList(event) {
     const checkIMG = document.createElement('img');  // Image for check button
     checkIMG.src = 'check.png';
     const bulletPoint = document.createTextNode('\u00A0' + '-'+' ');
+    // Units:
     const unitOptions = document.createElement('select');  // Selection input
     const units = document.createElement('option');
     const grams = document.createElement('option');
