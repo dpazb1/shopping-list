@@ -18,9 +18,10 @@ function addItemToList(event) {
     const checkIMG = document.createElement('img');  // Image for check button
     checkIMG.src = 'check.png';
     const quantityX = document.createTextNode('x');  // The 'x' before the number input.
+    const bulletPoint = document.createTextNode('\u00A0' + '-'+' ');
     // Customize itemText, the input box of every added item:
     itemText.setAttribute('type', 'text');
-    itemText.setAttribute('value', ` - ${userInput.value}`);
+    itemText.setAttribute('value', userInput.value);
     itemText.setAttribute('spellcheck', 'false')
     itemText.classList.add('itemInput');
     itemText.scrollLeft = itemText.scrollWidth;
@@ -39,6 +40,9 @@ function addItemToList(event) {
     // Add the image source:
     check.appendChild(checkIMG);
     cross.appendChild(crossIMG);
+    // Add the bullet point separate so it doesn't get a line-through when class 'done' is applied:
+    // bulletPoint.classList.add('bullet-point');
+    li.appendChild(bulletPoint);
     // Add the text for <li>, taken from the input:
     li.appendChild(itemText);
     // Add the 'x':
