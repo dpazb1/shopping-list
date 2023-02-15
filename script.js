@@ -10,25 +10,61 @@ function addItemToList(event) {
     const hr = document.createElement('hr'); // Line between each item
     const li = document.createElement('li'); // List item
     const itemText = document.createElement('input'); // Input where item will be
-    const quantity = document.createElement('input');  // Number input to specify quantity
     const cross = document.createElement('button');  // Delete button
     const crossIMG = document.createElement('img');  // Image for delete button
     crossIMG.src = 'cross.png';
     const check = document.createElement('button');  // Mark as ready button
     const checkIMG = document.createElement('img');  // Image for check button
     checkIMG.src = 'check.png';
-    const quantityX = document.createTextNode('x');  // The 'x' before the number input.
     const bulletPoint = document.createTextNode('\u00A0' + '-'+' ');
+    const unitOptions = document.createElement('select');  // Selection input
+    const units = document.createElement('option');
+    const grams = document.createElement('option');
+    const mliters = document.createElement('option');
+    const kg = document.createElement('option');
+    const liters = document.createElement('option');
+    
+    // Create unit options:
+    unitOptions.setAttribute('name', 'Units:')
+    unitOptions.classList.add('unit-input');
+
+    // Num input for quantities:
+    const quantity = document.createElement('input');  // Number input to specify quantity
+    quantity.setAttribute('type', 'number');
+    quantity.classList.add('quantInput');
+    quantity.setAttribute('value', 1);
+
+    // Units    
+    units.text = 'un';
+    units.setAttribute('value', 'units');
+    unitOptions.appendChild(units);
+
+    // Kilograms
+    kg.text = 'kgs';
+    kg.setAttribute('value', 'kgs');
+    unitOptions.appendChild(kg);
+
+    // Grams
+    grams.text = 'grs';
+    grams.setAttribute('value', 'grs');
+    unitOptions.appendChild(grams);
+
+    // Litres
+    liters.text = 'lts';
+    liters.setAttribute('value', 'lts');
+    unitOptions.appendChild(liters);
+
+    // MLiters
+    mliters.text = 'mls';
+    mliters.setAttribute('value', 'mls');
+    unitOptions.appendChild(mliters);
+
     // Customize itemText, the input box of every added item:
     itemText.setAttribute('type', 'text');
     itemText.setAttribute('value', userInput.value);
     itemText.setAttribute('spellcheck', 'false')
     itemText.classList.add('itemInput');
     itemText.scrollLeft = itemText.scrollWidth;
-    // Customize quantity button:
-    quantity.setAttribute('type', 'number');
-    quantity.classList.add('quantInput');
-    quantity.setAttribute('value', 1);
     // Customize the check and delete buttons:
     check.classList.add('addon-buttons');
     check.classList.add('move-right');  // Only needed in check button, to create space in between
@@ -45,10 +81,10 @@ function addItemToList(event) {
     li.appendChild(bulletPoint);
     // Add the text for <li>, taken from the input:
     li.appendChild(itemText);
-    // Add the 'x':
-    li.appendChild(quantityX);
     // Add quantity input:
     li.appendChild(quantity);
+    // Add unit picker:
+    li.appendChild(unitOptions);
     // Add the buttons to the <li>:
     li.appendChild(cross);
     li.appendChild(check);
@@ -79,6 +115,5 @@ userInput.addEventListener('keypress', function (event) {
 
 // Clear button
 clearButton.addEventListener('click', function () {
-    document.getElementById("shoppinglist").innerHTML='<li class="list-top">List:</li>
-    <hr class="custom-hr">';
+    document.getElementById("shoppinglist").innerHTML='<li class="list-top"><input type="text" class="main-list" value="List:"></li><hr class="custom-hr">';
 });
