@@ -6,7 +6,22 @@ html, body {
     background-color: white;
 }
 
+/* Background image */
+.background::before {
+    background-image: url(fruitBG.jpeg);
+    background-size: cover;
+    content: "";
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
 /* HEADER */
+
 .header {
     color:rgb(136, 56, 145);
     text-shadow: 0 0 3px rgb(0, 0, 0);
@@ -15,12 +30,13 @@ html, body {
     font-size: 3em;
 }
 
-.app {
+#app {
     color: rgb(62, 179, 91);
     text-shadow: 0 0 3px rgb(0, 0, 0);
 }
 
-/* ADDING */
+/* Adding section */
+
 .container-wrapper {
     display: flex;
     justify-content: center;
@@ -35,6 +51,9 @@ html, body {
 .adding-title {
     display: flex;
     justify-content: center;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .adding-input {
@@ -45,7 +64,6 @@ html, body {
     color: rgb(0, 0, 0);
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
-
 }
 
 .adding-input::placeholder {
@@ -60,7 +78,7 @@ html, body {
 
 input:focus::placeholder {
     color: transparent;
-  }
+}
 
 .adding-button {
     height: 30px;
@@ -69,9 +87,13 @@ input:focus::placeholder {
     border: none;
     position:relative;
     top: 5px;
-  
 }
-.add {
+
+.adding-button:hover {
+    cursor: pointer;
+}
+
+.add-icon {
     height: 33px;
     width: 33px;
     transition: all 0.05s;
@@ -80,15 +102,11 @@ input:focus::placeholder {
     left: -5px;
 }
 
-.add:active {
+.add-icon:active {
     transform: scale(1.05);
 }
 
-.adding-button:hover {
-    cursor: pointer;
-}
-
-/* LIST */
+/* Shopping List */
 
 .container-wrapper2 {
     display: flex;
@@ -96,35 +114,34 @@ input:focus::placeholder {
     flex-direction: column;
 }
 
-h2 {
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 5px;
+.list-top {
+    text-align: center;
+    font-size: 170%;
+    font-weight: 2000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.custom-hr {
+    width: 268px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
 }
 
 ul {
     padding: 0;
+    padding-bottom: 8px;
     list-style-type: none;
     width: 270px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: rgba(244, 228, 148, 0.1);
 }
+
 li {
     font-size: 1.2em;
     padding: 2px 0;
-}
-
-.clearing-button {
-    height: 25px;
-    background-color: rgba(205, 49, 49, 0.5);
-    border: 0.5px solid white;
-    border-radius: 5px;
-    color: white;
-    margin-bottom: 50px;
-}
-
-.clearing-button:hover {
-    cursor: pointer;
-    background-color: rgba(205, 49, 49, 0.8);
-    border-color: red;
 }
 
 .done {
@@ -138,11 +155,25 @@ li {
     width: 20px;
     opacity: 0.6;
 }
+
 .buttons:hover {
     cursor: pointer;
-}
-.buttons:hover {
     opacity: 1;
+}
+
+.clearing-button {
+    height: 25px;
+    background-color: rgba(205, 49, 49, 0.5);
+    border: 0.5px solid rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.clearing-button:hover {
+    cursor: pointer;
+    background-color: rgba(205, 49, 49, 0.8);
+    border-color: rgba(205, 49, 49, 0.8);
 }
 
 .addon-buttons {
@@ -155,16 +186,19 @@ li {
     border:none;
     top: 4px;
 }
-.check-btn {
+
+.move-right {
     position: relative;
     left: 3px;
 }
+
 .itemInput {
     border: none;
     outline: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9em;
     width: 150px;
+    background-color: rgba(0,0,0,0);
 }
 
 .itemInput::placeholder {
@@ -184,7 +218,8 @@ li {
     outline: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9em;
-    width: 30px;
+    width: 35px;
+    background-color: rgba(0,0,0,0);
 }
 
 .quantInput::placeholder {
@@ -192,15 +227,16 @@ li {
     opacity: 1;
 }
 
-
 .quantInput:active {
     border: none;
     outline: none;
     text-decoration: none;
 }
 
+/* Phone adjustment */
+
 @media only screen and (max-width: 509px) {
-    #list-h2 {
+    ul {
         margin-top: 50px;
     }
 }

@@ -8,23 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="title_icon.png" type="image/icon type">
     <title>ShopApp</title>
 </head>
 <body>
-    <h1 class="header">Shop<span class="app">App</span></h1>
-    <div class="container-wrapper">
-        <div class="adding-container">
-            <h2 class="adding-title">Online, easy-to-use shopping list</h2><br>
-            <input id="userinput" class="adding-input" type="text" placeholder="Enter item...">
-            <span><button class="adding-button"><img class= "add" src="add.png"></button></span>
+    <div class="background">
+        <h1 class="header">Shop<span id="app">App</span></h1>
+        <div class="container-wrapper">
+            <div class="adding-container">
+                <h2 class="adding-title">Online, easy-to-use shopping list</h2><br>
+                <input id="userinput" class="adding-input" type="text" placeholder="Enter item...">
+                <span><button class="adding-button"><img class= "add-icon" src="add.png"></button></span>
+            </div>
         </div>
-    </div>
-    <div class="container-wrapper2">
-        <h2 id="list-h2">List:</h2>
-        <ul id="shoppinglist">
-            
-        </ul>
-        <span><button class="clearing-button">Clear</button></span>
+        <div class="container-wrapper2">
+            <ul id="shoppinglist">
+                <li class="list-top">List:</li>
+                <hr class="custom-hr">
+            </ul>
+            <span><button class="clearing-button">Clear</button></span>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

@@ -1,24 +1,26 @@
-// Variables
-var addButton = document.querySelectorAll('button')[0];
-var clearButton = document.querySelectorAll('button')[1];
-var userInput = document.getElementById('userinput');
-var ul = document.getElementById('shoppinglist')
+// Global Variables
+const addButton = document.querySelectorAll('button')[0];
+const clearButton = document.querySelectorAll('button')[1];
+const userInput = document.getElementById('userinput');
+const ul = document.getElementById('shoppinglist')
 
 // Functions
 function addItemToList(event) {
-    // Creating the new li and the new check/cross buttons:
-    var li = document.createElement('li');
-    var itemText = document.createElement('input');
-    var quantity = document.createElement('input');
-    var cross = document.createElement('button');
-    var check = document.createElement('button');
-    var checkIMG = document.createElement('img');
-    checkIMG.src = 'check.png';
-    var crossIMG = document.createElement('img');
+    // Creating the new variables for each added item:
+    const hr = document.createElement('hr'); // Line between each item
+    const li = document.createElement('li'); // List item
+    const itemText = document.createElement('input'); // Input where item will be
+    const quantity = document.createElement('input');  // Number input to specify quantity
+    const cross = document.createElement('button');  // Delete button
+    const crossIMG = document.createElement('img');  // Image for delete button
     crossIMG.src = 'cross.png';
-    // Customize itemText:
+    const check = document.createElement('button');  // Mark as ready button
+    const checkIMG = document.createElement('img');  // Image for check button
+    checkIMG.src = 'check.png';
+    const quantityX = document.createTextNode('x');  // The 'x' before the number input.
+    // Customize itemText, the input box of every added item:
     itemText.setAttribute('type', 'text');
-    itemText.setAttribute('value', userInput.value);
+    itemText.setAttribute('value', ` - ${userInput.value}`);
     itemText.setAttribute('spellcheck', 'false')
     itemText.classList.add('itemInput');
     itemText.scrollLeft = itemText.scrollWidth;
@@ -26,34 +28,39 @@ function addItemToList(event) {
     quantity.setAttribute('type', 'number');
     quantity.classList.add('quantInput');
     quantity.setAttribute('value', 1);
-    // Add the cross/check img.
+    // Customize the check and delete buttons:
     check.classList.add('addon-buttons');
-    check.classList.add('check-btn');
-    cross.classList.add('addon-buttons');
+    check.classList.add('move-right');  // Only needed in check button, to create space in between
     checkIMG.classList.add('buttons');
-    // crossIMG.classList.add('cross-img-btn');
+    cross.classList.add('addon-buttons');
     crossIMG.classList.add('buttons');
+    // Customize horizontal line:
+    hr.classList.add('custom-hr');
+    // Add the image source:
     check.appendChild(checkIMG);
     cross.appendChild(crossIMG);
-    // Add the text for <li>, taken from input.
+    // Add the text for <li>, taken from the input:
     li.appendChild(itemText);
+    // Add the 'x':
+    li.appendChild(quantityX);
     // Add quantity input:
     li.appendChild(quantity);
-    // li.appendChild(document.createTextNode(userInput.value));
-    // Add the buttons to the <li>.
+    // Add the buttons to the <li>:
     li.appendChild(cross);
     li.appendChild(check);
+    // Add the HR:
+    li.appendChild(hr);
     // Add event for clicking the list item and toggling class "done".
     check.addEventListener('click', ()=> itemText.classList.toggle('done'))
     // Add event for clicking delete button, that makes its parent element(<li>) disappear.
     cross.addEventListener('click', ()=> cross.parentElement.remove())
     // Add <li> to the <ul>
     ul.appendChild(li);
-    // Reset the input to nothing.
+    // Reset the user input to nothing.
     userInput.value = '';
 }
 
-// Add / Enter 
+// Accepting button click or enter key to add a new item: 
 addButton.addEventListener('click', function () {
     if (userInput.value !== '') {
         addItemToList();
