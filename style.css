@@ -128,7 +128,7 @@ input:focus::placeholder {
 }
 
 .custom-hr {
-    width: 268px;
+    width: 298px;
     background-color: black;
     padding: 0;
     margin: 0;
@@ -138,7 +138,7 @@ ul {
     padding: 0;
     padding-bottom: 8px;
     list-style-type: none;
-    width: 270px;
+    width: 300px;
     border: 1px solid black;
     border-radius: 4px;
     background-color: rgba(244, 228, 148, 0.1);
