@@ -204,6 +204,7 @@ li {
     font-size: 0.9em;
     width: 150px;
     background-color: rgba(0,0,0,0);
+    text-overflow: ellipsis;
 }
 
 .itemInput::placeholder {
